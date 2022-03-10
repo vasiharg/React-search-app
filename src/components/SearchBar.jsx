@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { Input, SearchBar } from "../styles/styles";
+
 
 export default function Search({ search, onChange }) {
-
     return (
-        <form className="searchBar">
+        <SearchBar>
             <h1>Enter the search value</h1>
-            <input type="text" id="search value" value={search} onChange={onChange} />
+            <Input type="text" value={search} onChange={onChange} />
 
-        </form>
+        </SearchBar>
     )
 }

@@ -1,18 +1,24 @@
 import React from "react";
+import { ListElement } from "../styles/styles";
+import { ListItem } from "../styles/styles";
 
 import { DATASET } from '../dataset';
 
 export const List = ({ valoarea_de_filtrare }) => {
 
-    const filtered_dataset = DATASET.filter((item) => item.startsWith(valoarea_de_filtrare));
+    const filtered_dataset = DATASET.filter((item) => {
+        item = item.toLocaleLowerCase();
+        valoarea_de_filtrare = valoarea_de_filtrare.toLocaleLowerCase();
+        return (item.startsWith(valoarea_de_filtrare));
+    });
 
     return (
-        <ul className="display-box">
+        <ListElement>
             {filtered_dataset.map((item) => (
-                <li key={item}>
+                <ListItem key={item}>
                     {item}
-                </li>
+                </ListItem>
             ))}
-        </ul>
+        </ListElement>
     )
 }
