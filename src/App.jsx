@@ -7,6 +7,7 @@ export default function App() {
     const onChange = (e) => {
         setSearch(e.target.value);
     };
+    conbsole.log('a')
 
     return (
         <>
